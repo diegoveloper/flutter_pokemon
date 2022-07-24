@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_app/data/rest/pokemon_rest_service.dart';
 import 'package:pokemon_app/domain/repository/pokemon_api.dart';
 import 'package:pokemon_app/main.dart';
 import 'package:pokemon_app/ui/home/home_provider.dart';

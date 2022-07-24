@@ -17,7 +17,6 @@ class HomeProvider extends ChangeNotifier {
   final debouncer = Debouncer();
 
   Future<void> loadPokemons() async {
-    print('load pokemons');
     pokemonList = await pokemonApi.getPokemons();
     _setInitialList();
     notifyListeners();

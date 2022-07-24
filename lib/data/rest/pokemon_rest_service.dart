@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:pokemon_app/data/pokemon_analytics.dart';
 import 'package:pokemon_app/domain/model/pokemon.dart';
 import 'package:pokemon_app/domain/repository/pokemon_api.dart';
@@ -16,8 +17,10 @@ class PokemonRestService implements PokemonApi {
     var url = Uri.parse(pokemonAPI);
     pokemonAnalytics.sendEvent('get list of pokemons');
     var response = await http.get(url);
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
+    if (kDebugMode) {
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+    }
     return pokemonFromJson(response.body);
   }
 }
